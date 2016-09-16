@@ -72,7 +72,7 @@ function pre_install(){
         exit 1
     fi
     # Set ShadowsocksR config password
-    echo -e "感谢使用 一键SSR翻墙加速脚本【已支持国内一键安装】"
+    echo -e "感谢使用云里路 一键SSR翻墙加速脚本【已支持国内一键安装】"
     read -p "(回车将默认设置连接密码为：123456789):" shadowsockspwd
     [ -z "$shadowsockspwd" ] && shadowsockspwd="123456789"
     echo
@@ -127,23 +127,23 @@ function pre_install(){
 # Download files
 function download_files(){
     # Download libsodium file
-    if ! wget --no-check-certificate -O libsodium-1.0.10.tar.gz https://raw.githubusercontent.com/AlphaBrock/Freely-surfing-the-Internet/master/libsodium-1.0.10.tar.gz; then
+    if ! wget --no-check-certificate -O libsodium-1.0.10.tar.gz https://raw.githubusercontent.com/jsonge/Freely-surfing-the-Internet/master/libsodium-1.0.10.tar.gz; then
         echo "错误：抱歉，libsodium文件下载失败！"
         exit 1
     fi
     # Download ShadowsocksR file
-    # if ! wget --no-check-certificate -O manyuser.zip https://raw.githubusercontent.com/AlphaBrock/Freely-surfing-the-Internet/master/shadowsocks-manyuser.zip; then
+    # if ! wget --no-check-certificate -O manyuser.zip https://raw.githubusercontent.com/jsonge/Freely-surfing-the-Internet/master/shadowsocks-manyuser.zip; then
         # echo "错误：抱歉，shadowsocksr文件下载失败！"
         # exit 1
     # fi
     # Download ShadowsocksR chkconfig file
     if [ "$OS" == 'CentOS' ]; then
-        if ! wget --no-check-certificate https://raw.githubusercontent.com/AlphaBrock/Freely-surfing-the-Internet/master/ShadowsocksR  -O /etc/init.d/shadowsocks; then
+        if ! wget --no-check-certificate https://raw.githubusercontent.com/jsonge/Freely-surfing-the-Internet/master/ShadowsocksR  -O /etc/init.d/shadowsocks; then
             echo "错误：抱歉，shadowsocksr chkconfig文件下载失败！"
             exit 1
         fi
     else
-        if ! wget --no-check-certificate https://raw.githubusercontent.com/AlphaBrock/Freely-surfing-the-Internet/master/ShadowsocksR-debian -O /etc/init.d/shadowsocks; then
+        if ! wget --no-check-certificate https://raw.githubusercontent.com/jsonge/Freely-surfing-the-Internet/master/ShadowsocksR-debian -O /etc/init.d/shadowsocks; then
             echo "错误：抱歉，ShadowsocksR-debian文件下载失败！"
             exit 1
         fi
